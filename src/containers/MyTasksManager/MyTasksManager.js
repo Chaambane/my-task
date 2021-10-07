@@ -11,7 +11,7 @@ class MyTasksManager extends Component {
         tasksList: [
             {id:"gipmzfg2", name:"Finir my-tasks", completed: false},
             {id:"mn8rayh5", name:"Cour redux", completed: false},
-            {id:"fbz3ovt9", name:"app météo", completed: false},
+            {id:"fbz3ovt9", name:"Revoir weather App", completed: false},
         ],
         addTask: false
     }
@@ -35,9 +35,22 @@ class MyTasksManager extends Component {
 
         newTasksList.push(newTask);
 
-        console.log(newTasksList);
+        // console.log(newTasksList);
 
         this.setState({tasksList: newTasksList});
+    }
+
+    handleDeleteTask = (id) => {
+        const idTask = this.state.tasksList.findIndex(t => {
+            return t.id === id
+        });
+
+        const newTasksList = [...this.state.tasksList];
+
+        newTasksList.splice(idTask, 1);
+
+        this.setState({tasksList: newTasksList});
+
     }
 
     render() {
@@ -52,6 +65,7 @@ class MyTasksManager extends Component {
                                 <section className="container m-1 mb-2" id="cardTask" key={task.id}>
                                     <CardTasks
                                         {...task}
+                                        deleteTask = {() => this.handleDeleteTask(task.id)}
                                     />
                                 </section>
                             )
