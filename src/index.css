@@ -26,6 +26,8 @@ body{
 }
 #main h1{
   text-shadow: 0.1rem 0.5rem 0.5rem rgb(171, 218, 236);
+  border-bottom: 0.2rem solid rgb(171, 218, 236);
+  border-radius: 0.2rem;
 }
 section .card:hover{
   border-color: rgb(171, 218, 236);

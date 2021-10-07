@@ -37,7 +37,10 @@ class MyTasksManager extends Component {
 
         // console.log(newTasksList);
 
-        this.setState({tasksList: newTasksList});
+        this.setState({
+            tasksList: newTasksList,
+            addTask: false
+        });
     }
 
     handleDeleteTask = (id) => {
