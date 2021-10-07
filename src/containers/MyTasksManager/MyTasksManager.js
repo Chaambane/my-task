@@ -4,11 +4,15 @@ import TitleH1 from '../../components/TitleH1/TitleH1';
 import CardTasks from '../../components/CardTasks/CardTasks';
 import FormAddTask from '../FormAddTask/FormAddTask';
 import ButtonCreateTask from '../../components/ButtonCreateTask/ButtonCreateTask';
-import DataStorage from '../../DataStorage';
+import uniqid from 'uniqid';
 
 class MyTasksManager extends Component {
     state = {
-        tasksList: DataStorage,
+        tasksList: [
+            {id:"gipmzfg2", name:"Finir my-tasks", completed: false},
+            {id:"mn8rayh5", name:"Cour redux", completed: false},
+            {id:"fbz3ovt9", name:"app météo", completed: false},
+        ],
         addTask: false
     }
 
@@ -18,6 +22,22 @@ class MyTasksManager extends Component {
                 addTask: !oldState.addTask
             }
         })
+    }
+
+    handleCreateTask = (task) => {
+        const newTask = {
+            id: uniqid(),
+            name: task,
+            completed: false
+        }
+
+        const newTasksList = [...this.state.tasksList];
+
+        newTasksList.push(newTask);
+
+        console.log(newTasksList);
+
+        this.setState({tasksList: newTasksList});
     }
 
     render() {
@@ -38,7 +58,7 @@ class MyTasksManager extends Component {
                         })
                     }
                     <ButtonCreateTask clic= {() => this.handleDisplayForm()}/>
-                    {this.state.addTask && <FormAddTask/>}
+                    {this.state.addTask && <FormAddTask createTask = {this.handleCreateTask}/>}
                 </main>
             </>
         )
