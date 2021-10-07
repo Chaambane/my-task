@@ -11,7 +11,7 @@ const navbar = (props) => (
                 <li className="nav-item">
                     <NavLink className="nav-link text-dark" to="/completed">Tâches terminées</NavLink>
                 </li>
-                </ul>
+            </ul>
         </nav>
     </header>
 );

@@ -1,7 +1,7 @@
 import React from 'react'
 
     const titleH1 = (props) => (
-        <h1 fw-bold text-center>
+        <h1 className="fw-bold text-center">
             {props.children}
         </h1>
     );
