@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
-import {BrowseRouter, Switch, Route} from 'react-router-dom';
-import MyTasksManager from './containers/MyTasksManager/MyTasksManager'
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import MyTasksManager from './containers/MyTasksManager/MyTasksManager';
+import TasksCompleted from './components/TasksCompleted/TasksCompleted';
 
 class App extends Component {
   render() {
     return (
-      <BrowseRouter>
+      <BrowserRouter>
         <Switch>
           <Route component={MyTasksManager} />
+          <Route component={TasksCompleted} />
         </Switch>
-      </BrowseRouter>
+      </BrowserRouter>
     )
   };
 }

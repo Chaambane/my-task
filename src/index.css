@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  font-family: 'Gemunu Libre', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/*HEADER*/
+#header{
+  background-color: rgb(171, 218, 236);
+}
+#header .nav .nav-item{
+  padding: 0.5rem;
+}
+#header .nav .nav-item a:hover{
+  border: 0.1rem solid;
+  border-radius: 1rem;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+/* MAIN */
+#main{
+  width: 480px;
+  border: 0.3rem solid rgb(171, 218, 236);
+  border-radius: 1rem;
+  text-shadow: forestgreen;
+}
+#main h1{
+  text-shadow: 0.1rem 0.5rem 0.5rem rgb(171, 218, 236);
+}
+section .card:hover{
+  border-color: rgb(171, 218, 236);
+}
+.btnCompleted:hover{
+  background-color: forestgreen;
+  color: #fff;
+}
+.btnDelete:hover{
+  background-color: rgb(199, 81, 81);
 }
