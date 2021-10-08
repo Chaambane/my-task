@@ -9,10 +9,20 @@ class MyTasksManager extends Component {
     state = {
         tasksList: [
             {id:"gipmzfg2", name:"Finir my-tasks", completed: false},
-            {id:"mn8rayh5", name:"Cour redux", completed: false},
-            {id:"fbz3ovt9", name:"Revoir weather App", completed: false},
         ],
         addTask: false
+    }
+
+    handleToggleCompleted = (id) => {
+        let idTaskUpdate = this.state.tasksList.find(t => t.id === id);
+
+        idTaskUpdate.completed = !idTaskUpdate.completed;
+
+        this.setState(oldState => {
+            oldState.tasksList.map(task => {
+                return task.id === id? idTaskUpdate : task
+            })
+        });
     }
 
     handleDisplayForm = () => {
@@ -67,6 +77,7 @@ class MyTasksManager extends Component {
                                     <CardTasks
                                         {...task}
                                         deleteTask = {() => this.handleDeleteTask(task.id)}
+                                        toggleCompleted ={this.handleToggleCompleted}
                                     />
                                 </section>
                             )

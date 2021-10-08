@@ -9,7 +9,7 @@ class App extends Component {
       <BrowserRouter>
         <NavBar/>
         <Switch>
-          <Route path="/" component={MyTasksManager} />
+          <Route path="/" render={(props) => <MyTasksManager {...props}/>}/>
         </Switch>
       </BrowserRouter>
     )
