@@ -32,6 +32,9 @@ body{
 section .card:hover{
   border-color: rgb(171, 218, 236);
 }
+#cardTask button{
+  margin-right: 0.5rem;
+}
 .btnCompleted:hover{
   background-color: forestgreen;
   color: #fff;
