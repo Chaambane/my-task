@@ -8,9 +8,6 @@ const navbar = (props) => (
                 <li className="nav-item me-4">
                     <NavLink className="nav-link active text-dark" to="/">Mes tâches</NavLink>
                 </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link text-dark" to="/completed">Tâches terminées</NavLink>
-                </li>
             </ul>
         </nav>
     </header>
